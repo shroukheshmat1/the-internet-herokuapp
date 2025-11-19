@@ -5,6 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/**
+ * Scenario: Validate the numeric-only input field.
+ * Steps:
+ * 1. Attempt to type letters/symbols and confirm the value stays empty.
+ * 2. Provide a digit and ensure the field reflects the typed value.
+ */
 public class Inputs {
     public boolean testInput(WebElement element, String valueToType, String expectedValue) {
         element.clear();

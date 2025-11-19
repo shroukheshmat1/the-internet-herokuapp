@@ -6,9 +6,56 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /*
- * Test WYSIWYG (What You See Is What You Get) Editor
- * WYSIWYG editors are rich text editors that allow formatting text
- * We need to switch to the iframe to interact with the editor content
+ * ============================ ✏️ WYSIWYG EDITOR AUTOMATION =============================
+ *
+ * TEST GOAL:
+ * Learn how to interact with WYSIWYG (What You See Is What You Get) editors!
+ * These are rich text editors like the ones in Gmail, WordPress, or Google Docs!
+ *
+ * WHY THIS IS SPECIAL:
+ * --------------------------------------------------------------------------------------------
+ * WYSIWYG editors are usually embedded inside an iframe (a separate HTML document).
+ * To interact with the editor content, we must first "switch" to the iframe!
+ * It's like the editor is in a separate room - we need to enter that room first!
+ *
+ * KEY CONCEPTS:
+ * --------------------------------------------------------------------------------------------
+ * 1️⃣ What is WYSIWYG?
+ *    - WYSIWYG = "What You See Is What You Get"
+ *    - It's a text editor where you see formatted text as you type
+ *    - Examples: TinyMCE, CKEditor, Google Docs editor
+ *
+ * 2️⃣ Why the iframe?
+ *    - Editors are often in iframes to isolate them from the main page
+ *    - This prevents conflicts with the page's CSS and JavaScript
+ *    - Think of it as a separate "mini webpage" inside the main page
+ *
+ * 3️⃣ Switching to iframe:
+ *    - driver.switchTo().frame(iframeElement) → Enter the iframe
+ *    - Now we can interact with elements inside the editor
+ *    - driver.switchTo().defaultContent() → Go back to main page
+ *
+ * 4️⃣ Editor Interaction:
+ *    - Find the editor body element (usually <body> or <div> with contenteditable)
+ *    - Use clear() to remove existing content
+ *    - Use sendKeys() to type text
+ *    - Use getText() to read the content
+ *
+ * WHAT WE'LL DO:
+ * --------------------------------------------------------------------------------------------
+ * Step 1: Find the iframe that contains the editor
+ * Step 2: Switch to the iframe
+ * Step 3: Find the editor body element
+ * Step 4: Type text in the editor
+ * Step 5: Switch back to main page
+ * Step 6: Click formatting buttons (like Bold)
+ * Step 7: Switch back to iframe to verify formatting
+ *
+ * FUN FACT:
+ * WYSIWYG editors are like having a mini word processor inside a webpage!
+ * You can format text, add links, and more - all while seeing the result live! 📝
+ *
+ * ============================================================================================
  */
 
 public class WYSIWYGEditor {

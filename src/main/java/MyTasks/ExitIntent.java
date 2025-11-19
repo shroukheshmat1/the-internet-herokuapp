@@ -10,6 +10,12 @@ import java.awt.Robot;
 import java.time.Duration;
 import java.util.List;
 
+/**
+ * Scenario: Trigger the Exit Intent modal with a simulated mouse exit.
+ * Steps:
+ * 1. Use Robot to move the pointer above the viewport and wait for the modal.
+ * 2. Validate the title, close the modal, and ensure it is hidden again.
+ */
 public class ExitIntent {
     public static void main(String[] args) throws Exception {
         WebDriver driver = new ChromeDriver();

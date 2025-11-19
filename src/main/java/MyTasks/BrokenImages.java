@@ -9,6 +9,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * Scenario: Scan the Broken Images page.
+ * Steps:
+ * 1. Iterate over all image tags and ping their URLs via HTTP HEAD.
+ * 2. Count and log broken resources to verify the detection logic.
+ */
 public class BrokenImages {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

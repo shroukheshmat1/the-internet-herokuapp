@@ -6,6 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Scenario: Demonstrate that menu items, images, and lists can shift positions.
+ * Steps:
+ * 1. For each example, capture state, refresh, then compare the new layout/text.
+ * 2. Log whether a shift occurred before moving to the next example.
+ */
 public class ShiftingContent {
 
     public static void main(String[] args) throws InterruptedException {

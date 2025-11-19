@@ -9,6 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Scenario: Validate both Dynamic Loading examples.
+ * Steps:
+ * 1. Trigger Example 1 and wait until the hidden element appears with “Hello World!”
+ * 2. Navigate back, open Example 2, and assert the lazily rendered text matches as well.
+ */
 public class DynamicLoading {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

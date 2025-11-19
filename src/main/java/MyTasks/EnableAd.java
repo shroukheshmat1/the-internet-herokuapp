@@ -11,6 +11,12 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Scenario: Exercise the Entry Ad modal flow.
+ * Steps:
+ * 1. Assert the modal appears with one window, verify the title, then close it.
+ * 2. Click “click here” to reopen and confirm the modal becomes visible again.
+ */
 public class EnableAd {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

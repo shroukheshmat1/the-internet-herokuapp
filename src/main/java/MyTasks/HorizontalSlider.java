@@ -5,6 +5,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/**
+ * Scenario: Move the horizontal slider back and forth via keyboard events.
+ * Steps:
+ * 1. Increment the slider until max, validating each change equals one step.
+ * 2. Decrement back to min to ensure boundary checks behave as expected.
+ */
 public class HorizontalSlider {
 
     // Move slider RIGHT by one step

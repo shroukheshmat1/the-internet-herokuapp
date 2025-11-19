@@ -12,8 +12,52 @@ import java.time.Duration;
 import java.util.List;
 
 /*
- * Test JavaScript alerts: Alert, Confirm, and Prompt
- * After each alert interaction, verify the result text is displayed correctly
+ * ============================ ⚠️ JAVASCRIPT ALERTS AUTOMATION =============================
+ *
+ * TEST GOAL:
+ * Learn how to handle JavaScript alerts (Alert, Confirm, and Prompt) in Selenium!
+ * These are popup dialogs that appear when you click buttons - we need to interact with them!
+ *
+ * WHY THIS IS IMPORTANT:
+ * --------------------------------------------------------------------------------------------
+ * JavaScript alerts are special browser dialogs that block the page until you interact with them.
+ * Selenium can't click buttons or find elements while an alert is open - we must handle it first!
+ *
+ * TYPES OF ALERTS:
+ * --------------------------------------------------------------------------------------------
+ * 1️⃣ Alert (Simple Alert):
+ *    - Just shows a message with an "OK" button
+ *    - Use alert.accept() to click OK
+ *    - Example: "Hello! This is an alert!"
+ *
+ * 2️⃣ Confirm (Confirmation Alert):
+ *    - Shows a message with "OK" and "Cancel" buttons
+ *    - Use alert.accept() for OK or alert.dismiss() for Cancel
+ *    - Example: "Are you sure you want to delete this?"
+ *
+ * 3️⃣ Prompt (Input Alert):
+ *    - Shows a message with a text input field and "OK"/"Cancel" buttons
+ *    - Use alert.sendKeys("text") to type, then accept() or dismiss()
+ *    - Example: "Please enter your name:"
+ *
+ * KEY CONCEPTS:
+ * --------------------------------------------------------------------------------------------
+ * - Alert alert = wait.until(ExpectedConditions.alertIsPresent())
+ *   → Waits for alert to appear, then gets the Alert object
+ * - alert.accept() → Clicks OK/Yes button
+ * - alert.dismiss() → Clicks Cancel/No button
+ * - alert.sendKeys("text") → Types text into prompt alert
+ * - alert.getText() → Gets the alert message text
+ *
+ * WHAT WE'LL DO:
+ * --------------------------------------------------------------------------------------------
+ * We'll test all three types of alerts by clicking buttons and verifying the results!
+ *
+ * FUN FACT:
+ * Alerts are like popup notifications - you can't ignore them, you must interact!
+ * It's like someone asking you a question - you have to answer before continuing! 💬
+ *
+ * ============================================================================================
  */
 
 public class JavaScriptAlerts {

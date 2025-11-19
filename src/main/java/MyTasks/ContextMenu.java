@@ -7,6 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+/**
+ * Scenario: Right-click inside the Context Menu hotspot.
+ * Steps:
+ * 1. Trigger the custom context menu via Actions.contextClick.
+ * 2. Assert the alert text and dismiss it before closing the browser.
+ */
 public class ContextMenu {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

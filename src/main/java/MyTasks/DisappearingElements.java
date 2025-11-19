@@ -7,6 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/**
+ * Scenario: Observe the flakiness of the “Gallery” link on the Disappearing Elements page.
+ * Steps:
+ * 1. Refresh the page multiple times and log whenever the Gallery link exists.
+ * 2. Assert that it both appears and disappears at least once, proving the behavior.
+ */
 public class DisappearingElements {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();

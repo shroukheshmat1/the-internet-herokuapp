@@ -7,6 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/**
+ * Scenario: Toggle both checkboxes on the Checkboxes page.
+ * Steps:
+ * 1. Record how many boxes are selected/deselected before interaction.
+ * 2. Click each checkbox to flip its state and assert the counters change.
+ */
 public class Checkboxes {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

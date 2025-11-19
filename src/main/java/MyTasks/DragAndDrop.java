@@ -6,6 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+/**
+ * Scenario: Swap Column A and Column B using drag and drop.
+ * Steps:
+ * 1. Drag the first column onto the second with the Actions API.
+ * 2. Verify their header text swapped to ensure the DnD succeeded.
+ */
 public class DragAndDrop {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();

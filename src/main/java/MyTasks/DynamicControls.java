@@ -11,6 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Scenario: Exercise the checkbox and input field on the Dynamic Controls page.
+ * Steps:
+ * 1. Remove and add the checkbox while waiting for loading indicators/messages.
+ * 2. Toggle the input field between enabled/disabled states and validate the UI hints.
+ */
 public class DynamicControls {
     public static void main(String[] args) {
         WebDriver driver = new EdgeDriver();

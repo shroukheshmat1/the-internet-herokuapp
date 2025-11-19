@@ -58,33 +58,36 @@ import java.util.List;
 public class InfiniteScroll {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/infinite_scroll");
-        //METHOD 1 : Using JS executor
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        long lastHeight = (long) js.executeScript("return document.body.scrollHeight");
-        for(int Ctr = 0;Ctr<5;Ctr++) {   //We'll Try Looping for 5 times just to check that the scroll is infinite
-            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-            long newHeight = (long) js.executeScript("return document.body.scrollHeight");
+        try {
+            driver.get("https://the-internet.herokuapp.com/infinite_scroll");
+            //METHOD 1 : Using JS executor
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            long lastHeight = (long) js.executeScript("return document.body.scrollHeight");
+            for(int Ctr = 0;Ctr<5;Ctr++) {   //We'll Try Looping for 5 times just to check that the scroll is infinite
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+                long newHeight = (long) js.executeScript("return document.body.scrollHeight");
 
-            // If heights are equal → no more new content
-            if (newHeight == lastHeight) {
-                break;
+                // If heights are equal → no more new content
+                if (newHeight == lastHeight) {
+                    break;
+                }
+                lastHeight = newHeight;
             }
-            lastHeight = newHeight;
+            System.out.println("Infinite scroll works correctly using METHOD 1.");
+            //METHOD 2 : check the parent HTML element length --IF ACHIEVABLE--
+            List<WebElement> parentDiv = driver.findElements(By.className("jscroll-inner"));
+            int parentDivSize = parentDiv.size();
+            for(int Ctr = 0;Ctr<5;Ctr++) {
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+                int newDivSize = driver.findElements(By.className("jscroll-inner")).size();
+                if (newDivSize == parentDivSize)
+                    break;
+                parentDivSize = newDivSize;
+            }
+            System.out.println("Infinite scroll works correctly using METHOD 2.");
+        } finally {
+            driver.quit();
         }
-        System.out.println("Infinite scroll works correctly using METHOD 1.");
-        //METHOD 2 : check the parent HTML element length --IF ACHIEVABLE--
-        List<WebElement> parentDiv = driver.findElements(By.className("jscroll-inner"));
-        int parentDivSize = parentDiv.size();
-        for(int Ctr = 0;Ctr<5;Ctr++) {
-            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-            int newDivSize = driver.findElements(By.className("jscroll-inner")).size();
-            if (newDivSize == parentDivSize)
-                break;
-            parentDivSize = newDivSize;
-        }
-        System.out.println("Infinite scroll works correctly using METHOD 2.");
-
     }
 
 }

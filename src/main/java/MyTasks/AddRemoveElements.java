@@ -6,6 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/**
+ * Scenario: Validate the Add/Remove Elements page.
+ * Steps:
+ * 1. Count delete buttons, add a new element, and assert the count increases by one.
+ * 2. Remove an element again and ensure the counter decreases.
+ */
 public class AddRemoveElements {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

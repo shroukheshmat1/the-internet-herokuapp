@@ -7,6 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/**
+ * Scenario: Compare the dynamic vs static versions of the Dynamic Content page.
+ * Steps:
+ * 1. Refresh the default view to confirm images/text actually change.
+ * 2. Switch to the static view and prove the content now stays the same.
+ */
 public class DynamicContent {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();

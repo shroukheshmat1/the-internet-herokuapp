@@ -6,6 +6,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
+/**
+ * Scenario: Cover happy and unhappy login paths for Form Authentication.
+ * Steps:
+ * 1. Reuse the Scenario helper to submit valid/invalid combinations and wait for flash messages.
+ * 2. Clear the input fields between attempts to keep each test isolated.
+ */
 public class FormAuthentication {
 
     public static void Scenario(WebDriver driver, String loginUrl, String username, String password) {

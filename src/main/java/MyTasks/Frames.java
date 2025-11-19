@@ -5,6 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/**
+ * Scenario: Navigate through nested frames and log their text content.
+ * Steps:
+ * 1. Visit the nested frames page, hop into bottom, top, and child frames to read text.
+ * 2. Return to default content between hops to keep the frame stack clean.
+ */
 public class Frames {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

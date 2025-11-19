@@ -7,6 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import java.util.List;
 
+/**
+ * Scenario: Reveal captions for each avatar on the Hovers page.
+ * Steps:
+ * 1. Hover every `.figure` element with the Actions API.
+ * 2. Assert the nested `.figcaption` becomes visible and log its text.
+ */
 public class Hovers {
 
     public static void main(String[] args) {

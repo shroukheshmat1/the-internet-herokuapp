@@ -55,6 +55,12 @@ import org.openqa.selenium.logging.LogType;
 
 import java.util.List;
 
+/**
+ * Scenario: Capture console logs and ensure a JavaScript error is thrown.
+ * Steps:
+ * 1. Load the JavaScript error page.
+ * 2. Read browser logs for the known “Cannot read properties of undefined” message and assert it exists.
+ */
 public class JavaScriptError {
     public static void main(String[] args) {
 
